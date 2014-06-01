@@ -1,7 +1,10 @@
 <!doctype html>
 <html>
     <head>        
+        <meta charset="utf-8" />
+
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <!-- endbower -->
 
         <!-- build:css styles/main.css -->
@@ -9,13 +12,47 @@
         <!-- endbuild -->
 
         <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/backbone.localStorage/backbone.localStorage-min.js"></script>
         <!-- endbower -->
-
-        <!-- build:js scripts/popup.js -->
-        <script src="scripts/popup.js"></script>
-        <!-- endbuild -->
     </head>
-    <body>
-      <h1>'Allo, 'Allo!</h1>
+    <body style="width: 500px;">
+      <div class="container">
+        <nav class="navbar navbar-inverse" role="navigation" style="margin:0; padding:0;">
+          <div class="container" style="margin:0">
+            <div class="navbar-header">
+              <a class="navbar-brand">Nifty Id Switcher</a>
+            </div>
+          </div>
+        </nav>
+        <div id="account-list">
+        </div>
+      </div>
+
+      <script type="text/template" id="account-template">
+        <td><%- username %></td>
+        <td><%- memo %></td>
+        <td>
+          <button type="submit" class="btn btn-primary switch">切替</button>
+        </td>
+      </script>
+
+      <script type="text/template" id="accounts-template">
+        <div id="status">ステータス: <span id="status-detail">取得中</span></div>
+        <table class="table" id="accounts">
+        </table>
+      </script>
+
+      <!-- build:js scripts/options.js -->
+      <script src="scripts/lib/sso.js"></script>
+      <script src="scripts/models/account.js"></script>
+      <script src="scripts/models/accounts.js"></script>
+      <script src="scripts/views/popup_accounts_view.js"></script>
+      <script src="scripts/views/popup_account_view.js"></script>
+      <script src="scripts/popup.js"></script>
+      <!-- endbuild -->
     </body>
 </html>
