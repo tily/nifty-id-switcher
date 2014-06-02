@@ -1,8 +1,8 @@
 {
-    "name": "__MSG_appName__",
-    "version": "0.0.430",
+    "name": "nifty id switcher",
+    "version": "0.0.464",
     "manifest_version": 2,
-    "description": "__MSG_appDescription__",
+    "description": "nifty id switcher",
     "icons": {
         "16": "images/icon-16.png",
         "128": "images/icon-128.png"
@@ -25,6 +25,7 @@
     "options_page": "options.html",
     "permissions": [
         "https://www.nifty.com/",
+        "http://www.nifty.com/",
         "https://sso.nifty.com/"
     ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
