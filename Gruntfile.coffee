@@ -209,7 +209,11 @@ module.exports =  (grunt) ->
           src: [
             '*.{ico,png,txt}',
             'images/{,*/}*.{webp,gif}',
-            '_locales/{,*/}*.json'
+            '_locales/{,*/}*.json',
+            'scripts/{,*/}*.js',
+            'bower_components/*/*',
+            'bower_components/*/*/*',
+            'bower_components/*/*/*/*'
           ]
         ,
           expand: true
